@@ -3,11 +3,29 @@ import { Row } from 'app/design/layout'
 import { View } from 'app/design/view'
 
 import { MotiLink } from 'solito/moti'
+import { styled, useColorScheme } from 'nativewind';
+import { Pressable } from 'react-native';
+
+const StyledPressable = styled(Pressable)
+const StyledText = styled(Text)
 
 export function HomeScreen() {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
   return (
     <View className="flex-1 items-center justify-center p-3">
       <H1>Welcome to Solito.</H1>
+      <StyledPressable
+        onPress={toggleColorScheme}
+        className="flex-1 items-center justify-center dark:bg-slate-800"
+      >
+        <StyledText
+          selectable={false}
+          className="dark:text-white"
+        >
+          {`Try clicking me! ${colorScheme === "dark" ? "🌙" : "🌞"}`}
+        </StyledText>
+      </StyledPressable>
+
       <View className="max-w-xl">
         <P className="text-center">
           Here is a basic starter to show you how you can navigate from one
