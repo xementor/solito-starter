@@ -21,8 +21,12 @@ class Document extends NextDocument {
         <Head>
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          ></link>
         </Head>
-        <body>
+        <body className="bg-surface-100 dark:bg-surfacedark-100 loaded-success font-sans text-base font-normal text-gray-700 dark:text-gray-200">
           <Main />
           <NextScript />
         </body>
